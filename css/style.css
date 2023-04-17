@@ -38,7 +38,41 @@ body {
     font-size: 1.125rem; /* 18px */
 }
 
+.card .result {
+    padding: 2rem;
+    background: rgb(120,87,255);
+    background: linear-gradient(180deg, rgba(120,87,255,1) 1%, rgba(46,43,233,1) 74%);
+    text-align: center;    
+    color: var(--light-lavender);
+    border-radius: 0 0 2rem 2rem;
+}
 
+.card .result .result-heading {
+}
+
+.result .points {
+    overflow: hidden;
+    margin: 1.5rem 0;
+    padding: 1.5rem 2.5rem;
+    /* border: 1px solid #000; */
+    border-radius: 50%;
+    display: inline-block;
+    background: rgb(78,33,202);
+    background: linear-gradient(180deg, rgba(78,33,202,0.9640231092436975) 57%, rgba(5,2,14,0) 96%);
+}
+
+.result .points .point {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.result .comment {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--white);
+    letter-spacing: .8px;
+}
 
 
 
