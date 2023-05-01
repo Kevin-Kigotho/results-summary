@@ -6,10 +6,10 @@
     --pri-green-teel:  hsl(166, 100%, 37%); /* Verbal */
     --pri-cobalt-blue: hsl(234, 85%, 45%); /*Visual*/
 
-    --pri-bg-red: hsla(0, 100%, 67%, 0.11); /* Reaction */
-    --pri-bg-orange-yellow: hsl(39, 100%, 56%); /* Memory */
-    --pri-bg-green-teel:  hsl(166, 100%, 37%); /* Verbal */
-    --pri-bg-cobalt-blue: hsl(234, 85%, 45%); /*Visual*/
+    --pri-bg-red: hsla(0, 100%, 67%, 0.05); /* Reaction */
+    --pri-bg-orange-yellow: hsla(39, 100%, 56%, 0.05); /* Memory */
+    --pri-bg-green-teel:  hsla(166, 100%, 37%, 0.05); /* Verbal */
+    --pri-bg-cobalt-blue: hsla(234, 85%, 45%, 0.05); /*Visual*/
 
     /* Gradients */
     --bg-light-slate-blue: hsl(252, 100%, 67%);
@@ -38,6 +38,20 @@
     box-sizing: border-box;
 }
 
+/* Components */
+
+.btn {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    padding: .8rem 0;
+    border-radius: 30px;
+    font-size: inherit;
+    transition: all .3s ease-in-out;
+}
+
+
+
 body {
     font-family: 'Hanken Grotesk', sans-serif;
     font-size: 1.125rem; /* 18px */
@@ -46,6 +60,12 @@ body {
 img {
     max-width: 100%;
 }
+
+
+/* .card {
+    display: flex;
+    flex-wrap: wrap;
+} */
 
 .card .result {
     padding: 2rem;
@@ -81,13 +101,14 @@ img {
     font-size: 1.3rem;
     color: var(--white);
     letter-spacing: .8px;
+    margin-bottom: .5rem;
 }
 
 .summary {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
 }
 
 .summary h3 {
@@ -96,7 +117,7 @@ img {
 
 .category {
     display: flex;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     justify-content: space-between;
     padding: 0 1rem;
     margin-bottom: 1rem;
@@ -112,14 +133,93 @@ img {
     font-weight: var(--fw-700);
 }
 
+.category .score {
+    font-weight: 900;
+}
+
+.category .score p > span {
+    color: rgba(0, 0, 0, .4);
+}
+
 .reaction {
     background-color: var(--pri-bg-red);
 }
 
+.memory {
+    background-color: var(--pri-bg-orange-yellow);
+}
+
+.verbal {
+    background-color: var(--pri-bg-green-teel);
+}
+
+.visual {
+    background-color: var(--pri-bg-cobalt-blue);
+}
+
 .reaction .image p {
     color: var(--pri-red);
-} 
+}
 
+.memory .image p {
+    color: var(--pri-orange-yellow);
+}
+
+.verbal .image p {
+    color: var(--pri-green-teel);
+}
+
+.visual .image p {
+    color: var(--pri-cobalt-blue);
+}
+
+.btn-continue {   
+    background-color: var(--dark-gray-blue);
+    color: var(--white);
+    margin-top: 1rem;
+    font-size: .9rem;
+}
+
+ .btn-continue:active {
+    background: linear-gradient(180deg, rgba(120,87,255,1) 1%, rgba(46,43,233,1) 74%);
+    
+}
+
+@media (hover: hover) {
+    button:hover {
+        background: linear-gradient(180deg, rgba(120,87,255,1) 1%, rgba(46,43,233,1) 74%); /* Solves problem of hover states being sticky in mobile devices */
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 600px) {
+  
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }    
+
+    .card {
+        /* border: 1px solid #000; */
+        border-radius: 30px;
+        overflow: hidden;
+        /* margin: auto; */
+        width: 650px;
+        max-width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        place-content: center;
+        box-shadow: 2px 5px 30px 10px var(--pri-bg-cobalt-blue);
+    }
+
+    .card .result {
+        border-radius: 2rem;
+    }
+
+}
 
 
 .attribution { font-size: 11px; text-align: center; }
